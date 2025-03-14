@@ -6,7 +6,7 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Rocks2" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(651, 278)
 texture = ExtResource("1_uwrxv")
 

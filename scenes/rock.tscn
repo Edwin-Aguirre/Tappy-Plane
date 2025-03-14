@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbu1qw82jiugy"]
+
+[ext_resource type="Texture2D" uid="uid://cvxphgdh52pne" path="res://assets/pipes/rockGrass.png" id="1_1di36"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mek2u"]
+points = PackedVector2Array(-2, -120, 5, -120, 44, 120, -65, 120)
+
+[node name="Rock" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1di36")
+centered = false
+offset = Vector2(-65, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 120)
+shape = SubResource("ConvexPolygonShape2D_mek2u")
