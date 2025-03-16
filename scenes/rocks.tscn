@@ -1,18 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgjdddevoyrj2"]
+[gd_scene load_steps=4 format=3 uid="uid://bgjdddevoyrj2"]
 
 [ext_resource type="PackedScene" uid="uid://6wt56d4t13ty" path="res://scenes/star.tscn" id="1_f73mp"]
+[ext_resource type="Script" uid="uid://cviv8tyn2uh16" path="res://scripts/rocks.gd" id="1_njeqb"]
 [ext_resource type="PackedScene" uid="uid://bbu1qw82jiugy" path="res://scenes/rock.tscn" id="2_njeqb"]
 
 [node name="Rocks" type="Node2D"]
+script = ExtResource("1_njeqb")
 
 [node name="Star" parent="." instance=ExtResource("1_f73mp")]
+scale = Vector2(1.5, 1.5)
 
 [node name="Lower" parent="." instance=ExtResource("2_njeqb")]
-position = Vector2(0, 80)
+position = Vector2(0, 100)
+scale = Vector2(1.5, 1.5)
 
 [node name="Upper" parent="." instance=ExtResource("2_njeqb")]
-position = Vector2(0, -80)
+position = Vector2(0, -100)
 rotation = 3.14159
+scale = Vector2(1.5, 1.5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(250, 0)
+scale = Vector2(1.5, 1.5)
+
+[connection signal="body_entered" from="Lower" to="." method="_on_rock_body_entered"]
+[connection signal="body_entered" from="Upper" to="." method="_on_rock_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
