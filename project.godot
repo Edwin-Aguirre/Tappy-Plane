@@ -16,6 +16,12 @@ run/main_scene="uid://r2ctg3d0ign2"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalHub="*res://globals/signal_hub.gd"
+GameManager="*res://globals/game_manager.gd"
+HighScoreManager="*res://globals/high_score_manager.gd"
+
 [display]
 
 window/size/viewport_width=1280

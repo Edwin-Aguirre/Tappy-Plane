@@ -8,6 +8,9 @@ extends Node2D
 func _ready() -> void:
 	spawn_rocks()
 
+func _enter_tree() -> void:
+	SignalHub.on_plane_died.connect(_on_plane_died)
+
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_rocks()

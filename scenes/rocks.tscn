@@ -23,6 +23,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(250, 0)
 scale = Vector2(1.5, 1.5)
 
+[connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]
 [connection signal="body_entered" from="Lower" to="." method="_on_rock_body_entered"]
 [connection signal="body_entered" from="Upper" to="." method="_on_rock_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

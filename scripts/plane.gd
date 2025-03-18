@@ -12,7 +12,6 @@ var jump_force : float = -350.0
 const TAP = preload("res://assets/ui/tap.png")
 const TAP_TICK = preload("res://assets/ui/tapTick.png")
 
-signal on_plane_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,7 +43,7 @@ func fly(delta) -> void:
 func die() -> void:
 	animated_sprite_2d.stop()
 	set_physics_process(false)
-	on_plane_died.emit()
+	SignalHub.emit_on_plane_died()
 
 
 func _on_timer_timeout() -> void:
