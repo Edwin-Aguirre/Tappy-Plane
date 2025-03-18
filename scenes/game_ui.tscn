@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8v0g2escaoci"]
+
+[ext_resource type="Script" uid="uid://cgj3gnow3rbnv" path="res://scripts/game_ui.gd" id="1_rns2u"]
+[ext_resource type="LabelSettings" uid="uid://ttd02oclafnr" path="res://resources/game_ui.tres" id="1_yubou"]
+
+[node name="GameUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rns2u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = ExtResource("1_yubou")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = ExtResource("1_yubou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Space"
+label_settings = ExtResource("1_yubou")
+horizontal_alignment = 1
+vertical_alignment = 1
