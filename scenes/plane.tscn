@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm2wkuy440jnh"]
+[gd_scene load_steps=13 format=3 uid="uid://bm2wkuy440jnh"]
 
 [ext_resource type="Texture2D" uid="uid://de73d52qimiyi" path="res://assets/plane/planeRed1.png" id="1_md2q8"]
 [ext_resource type="Script" uid="uid://cx0jbgrhmm3y8" path="res://scripts/plane.gd" id="1_n0b6s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cofrn7ysbcp2d" path="res://assets/plane/planeRed3.png" id="3_ec1pi"]
 [ext_resource type="Texture2D" uid="uid://dq2uk2u7crxi5" path="res://assets/ui/tapRight.png" id="5_gvt5p"]
 [ext_resource type="Texture2D" uid="uid://ccw2ruclb0y1n" path="res://assets/ui/tapLeft.png" id="6_lf188"]
+[ext_resource type="AudioStream" uid="uid://lfkksv36jjw1" path="res://assets/audio/engine.mp3" id="7_lf188"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvt5p"]
 animations = [{
@@ -94,5 +95,10 @@ texture = ExtResource("6_lf188")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lf188")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

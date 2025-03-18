@@ -8,6 +8,8 @@ var jump_force : float = -350.0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tap_icons: Node2D = $TapIcons
+@onready var engine_sound: AudioStreamPlayer = $EngineSound
+
 
 const TAP = preload("res://assets/ui/tap.png")
 const TAP_TICK = preload("res://assets/ui/tapTick.png")
@@ -41,6 +43,7 @@ func fly(delta) -> void:
 		Input.set_custom_mouse_cursor(TAP)
 
 func die() -> void:
+	engine_sound.stop()
 	animated_sprite_2d.stop()
 	set_physics_process(false)
 	SignalHub.emit_on_plane_died()

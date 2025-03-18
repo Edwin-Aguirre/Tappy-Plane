@@ -29,3 +29,4 @@ func _on_star_body_entered(body: Node2D) -> void:
 	if body is Tappy:
 		star.body_entered.disconnect(_on_star_body_entered)
 		SignalHub.emit_on_point_scored()
+		star.hide()
